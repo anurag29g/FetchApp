@@ -6,31 +6,60 @@
 //
 
 import XCTest
+import CoreData
 @testable import FetchListApp
 
-final class FetchListAppTests: XCTestCase {
+class CoreDataManagerTests: XCTestCase {
+    var coreDataManager: CoreDataManager!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        
+        coreDataManager = CoreDataManager.createInMemoryManager()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        coreDataManager = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSavingItemToCoreData() {
+        let newItem = CachedItem(context: coreDataManager.context)
+        newItem.id = 1
+        newItem.listId = 2
+        newItem.name = "Test Item"
+
+        coreDataManager.saveContext()
+
+        let fetchRequest: NSFetchRequest<CachedItem> = CachedItem.fetchRequest()
+        let results = try? coreDataManager.context.fetch(fetchRequest)
+
+        XCTAssertEqual(results?.count, 1, "There should be one item in Core Data.")
+        XCTAssertEqual(results?.first?.name, "Test Item", "The item's name should match.")
+        XCTAssertEqual(results?.first?.listId, 2, "The item's listId should be 2.")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testLoadingItemsFromCoreData() {
+        let item1 = CachedItem(context: coreDataManager.context)
+        item1.id = 1
+        item1.listId = 2
+        item1.name = "Test Item 1"
 
+        let item2 = CachedItem(context: coreDataManager.context)
+        item2.id = 2
+        item2.listId = 2
+        item2.name = "Test Item 2"
+
+        coreDataManager.saveContext()
+
+        let fetchRequest: NSFetchRequest<CachedItem> = CachedItem.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        let results = try? coreDataManager.context.fetch(fetchRequest)
+
+        XCTAssertEqual(results?.count, 2, "There should be two items in Core Data.")
+        XCTAssertEqual(results?.first?.name, "Test Item 1", "The first item's name should match.")
+        XCTAssertEqual(results?.last?.name, "Test Item 2", "The second item's name should match.")
+    }
 }

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D03C09D2CBDB7E2003573C7 /* FetchListAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C09C2CBDB7E2003573C7 /* FetchListAppApp.swift */; };
+		9D03C09D2CBDB7E2003573C7 /* FetchListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C09C2CBDB7E2003573C7 /* FetchListApp.swift */; };
 		9D03C09F2CBDB7E2003573C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C09E2CBDB7E2003573C7 /* ContentView.swift */; };
 		9D03C0A12CBDB7E5003573C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D03C0A02CBDB7E5003573C7 /* Assets.xcassets */; };
 		9D03C0A42CBDB7E5003573C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D03C0A32CBDB7E5003573C7 /* Preview Assets.xcassets */; };
 		9D03C0AE2CBDB7E5003573C7 /* FetchListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0AD2CBDB7E5003573C7 /* FetchListAppTests.swift */; };
 		9D03C0B82CBDB7E5003573C7 /* FetchListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0B72CBDB7E5003573C7 /* FetchListAppUITests.swift */; };
 		9D03C0BA2CBDB7E5003573C7 /* FetchListAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0B92CBDB7E5003573C7 /* FetchListAppUITestsLaunchTests.swift */; };
+		9D03C0C72CBDBAEF003573C7 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0C62CBDBAEF003573C7 /* ItemList.swift */; };
+		9D03C0C92CBDBB16003573C7 /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0C82CBDBB16003573C7 /* ItemListViewModel.swift */; };
+		9D03C0CB2CBDC590003573C7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0CA2CBDC590003573C7 /* CoreDataManager.swift */; };
+		9D03C0DB2CBDC77D003573C7 /* CachedItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0D92CBDC77D003573C7 /* CachedItem.xcdatamodeld */; };
+		9D03C0E22CBDC83C003573C7 /* CachedItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0E02CBDC83C003573C7 /* CachedItem+CoreDataClass.swift */; };
+		9D03C0E32CBDC83C003573C7 /* CachedItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0E12CBDC83C003573C7 /* CachedItem+CoreDataProperties.swift */; };
+		9D03C0E92CBDD8CC003573C7 /* ListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D03C0E82CBDD8CC003573C7 /* ListSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		9D03C0992CBDB7E2003573C7 /* FetchListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D03C09C2CBDB7E2003573C7 /* FetchListAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListAppApp.swift; sourceTree = "<group>"; };
+		9D03C09C2CBDB7E2003573C7 /* FetchListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListApp.swift; sourceTree = "<group>"; };
 		9D03C09E2CBDB7E2003573C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D03C0A02CBDB7E5003573C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D03C0A32CBDB7E5003573C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +51,13 @@
 		9D03C0B32CBDB7E5003573C7 /* FetchListAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchListAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03C0B72CBDB7E5003573C7 /* FetchListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListAppUITests.swift; sourceTree = "<group>"; };
 		9D03C0B92CBDB7E5003573C7 /* FetchListAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D03C0C62CBDBAEF003573C7 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		9D03C0C82CBDBB16003573C7 /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
+		9D03C0CA2CBDC590003573C7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9D03C0DA2CBDC77D003573C7 /* CachedItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedItem.xcdatamodel; sourceTree = "<group>"; };
+		9D03C0E02CBDC83C003573C7 /* CachedItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9D03C0E12CBDC83C003573C7 /* CachedItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9D03C0E82CBDD8CC003573C7 /* ListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,8 @@
 		9D03C0902CBDB7E2003573C7 = {
 			isa = PBXGroup;
 			children = (
+				9D03C0E02CBDC83C003573C7 /* CachedItem+CoreDataClass.swift */,
+				9D03C0E12CBDC83C003573C7 /* CachedItem+CoreDataProperties.swift */,
 				9D03C09B2CBDB7E2003573C7 /* FetchListApp */,
 				9D03C0AC2CBDB7E5003573C7 /* FetchListAppTests */,
 				9D03C0B62CBDB7E5003573C7 /* FetchListAppUITests */,
@@ -94,8 +110,13 @@
 		9D03C09B2CBDB7E2003573C7 /* FetchListApp */ = {
 			isa = PBXGroup;
 			children = (
-				9D03C09C2CBDB7E2003573C7 /* FetchListAppApp.swift */,
+				9D03C09C2CBDB7E2003573C7 /* FetchListApp.swift */,
 				9D03C09E2CBDB7E2003573C7 /* ContentView.swift */,
+				9D03C0C62CBDBAEF003573C7 /* ItemList.swift */,
+				9D03C0C82CBDBB16003573C7 /* ItemListViewModel.swift */,
+				9D03C0CA2CBDC590003573C7 /* CoreDataManager.swift */,
+				9D03C0E82CBDD8CC003573C7 /* ListSectionView.swift */,
+				9D03C0D92CBDC77D003573C7 /* CachedItem.xcdatamodeld */,
 				9D03C0A02CBDB7E5003573C7 /* Assets.xcassets */,
 				9D03C0A22CBDB7E5003573C7 /* Preview Content */,
 			);
@@ -258,7 +279,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D03C09F2CBDB7E2003573C7 /* ContentView.swift in Sources */,
-				9D03C09D2CBDB7E2003573C7 /* FetchListAppApp.swift in Sources */,
+				9D03C0C92CBDBB16003573C7 /* ItemListViewModel.swift in Sources */,
+				9D03C0E92CBDD8CC003573C7 /* ListSectionView.swift in Sources */,
+				9D03C0DB2CBDC77D003573C7 /* CachedItem.xcdatamodeld in Sources */,
+				9D03C0C72CBDBAEF003573C7 /* ItemList.swift in Sources */,
+				9D03C0E22CBDC83C003573C7 /* CachedItem+CoreDataClass.swift in Sources */,
+				9D03C0E32CBDC83C003573C7 /* CachedItem+CoreDataProperties.swift in Sources */,
+				9D03C0CB2CBDC590003573C7 /* CoreDataManager.swift in Sources */,
+				9D03C09D2CBDB7E2003573C7 /* FetchListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +616,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D03C0D92CBDC77D003573C7 /* CachedItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D03C0DA2CBDC77D003573C7 /* CachedItem.xcdatamodel */,
+			);
+			currentVersion = 9D03C0DA2CBDC77D003573C7 /* CachedItem.xcdatamodel */;
+			name = CachedItem.xcdatamodeld;
+			path = /Users/onarug29/Desktop/apps/FetchListApp/FetchListApp/CachedItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9D03C0912CBDB7E2003573C7 /* Project object */;
 }
